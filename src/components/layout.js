@@ -2,7 +2,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import Img from 'gatsby-image'
 import Header from "./header"
 import Archive from "./archive"
 import "./layout.css"
@@ -23,6 +23,14 @@ const Layout = ({ children }) => {
           title
         }
       }
+    
+      file(relativePath:{regex:"/bg/"}){
+    childImageSharp{
+      fluid(maxWidth:1000){
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
     }
   `)
 
@@ -36,6 +44,7 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
+        <Img fluid={data.file.childImageSharp.fluid}/>
         <MainLayout>
           <div>
           {children}
