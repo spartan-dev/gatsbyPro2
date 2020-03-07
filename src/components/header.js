@@ -5,7 +5,7 @@ import Logo from "../asets/logo.svg"
 
 const HeaderWrapper = styled.div`
 background: #524763;
-margin-bottom:1.4rem;
+/* margin-bottom:1.4rem; */
 img{
   margin-bottom:0;
   width:100px;

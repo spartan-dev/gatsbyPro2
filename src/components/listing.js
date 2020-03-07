@@ -54,7 +54,7 @@ const Listing = () => (
            <Link to={`/posts${edge.node.frontmatter.slug}`}><h2>{edge.node.frontmatter.title }</h2></Link> 
        <p>{edge.node.frontmatter.date}</p>
        <p>{edge.node.excerpt}</p>
-       <Link class='read-more' to={`/post${edge.node.frontmatter.slug}`}>Read more</Link>
+       <Link className='read-more' to={`/posts${edge.node.frontmatter.slug}`}>Read more</Link>
            </Post>
        ))
    )}
